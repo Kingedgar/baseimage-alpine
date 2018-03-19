@@ -1,3 +1,4 @@
 #!/usr/bin/with-contenv bash
 
-ln -s /etc/fcron/fcron.conf /config/fcron.conf
+dockerize -no-overwrite -template /app/crontab.tmp:/config/crontab.tmp
+fcrontab < /config/crontab.tmp

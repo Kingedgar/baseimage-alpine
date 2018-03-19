@@ -32,7 +32,7 @@ ADD root /
 
 RUN chmod -v +x /etc/cont-init.d/*
 
-VOLUME ["/config", "/etc/cron.d"]
+VOLUME ["/config"]
 
 ENTRYPOINT ["/init"]
 CMD []
