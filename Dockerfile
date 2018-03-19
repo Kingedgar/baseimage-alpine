@@ -26,7 +26,7 @@ RUN \
 	rm -rf /var/cache/apk/* /etc/rsyslog.conf
 
 # Clean up apk cache
-rm -rf /var/cache/apk/*
+RUN rm -rf /var/cache/apk/*
 
 ADD root /
 
