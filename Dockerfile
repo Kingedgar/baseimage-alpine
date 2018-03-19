@@ -25,11 +25,14 @@ RUN \
 	mkdir -p /app /config /defaults && \
 	rm -rf /var/cache/apk/* /etc/rsyslog.conf
 
+# Clean up apk cache
+rm -rf /var/cache/apk/*
+
 ADD root /
 
 RUN chmod -v +x /etc/cont-init.d/*
 
-VOLUME /config
+VOLUME ["/config", "/etc/cron.d"]
 
 ENTRYPOINT ["/init"]
 CMD []
