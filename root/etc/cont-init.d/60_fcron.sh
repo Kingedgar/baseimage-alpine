@@ -2,5 +2,5 @@
 
 dockerize -no-overwrite -template /app/crontab.custom:/conf/crontab.custom
 
-touch /var/spool/fcron/app.orig
-cat /conf/crontab.custom > /var/spool/fcron/app.orig
+touch /var/spool/fcron/root.orig
+cat /conf/crontab.custom > /var/spool/fcron/root.orig
