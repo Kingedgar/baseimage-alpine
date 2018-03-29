@@ -30,6 +30,9 @@ ADD root /
 
 RUN chmod -v +x /etc/cont-init.d/*
 
+" Copy crontab into the conf directory
+cp /var/spool/fcron /conf/crontab
+
 VOLUME ["/config"]
 
 ENTRYPOINT ["/init"]
