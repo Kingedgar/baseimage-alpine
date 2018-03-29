@@ -10,7 +10,7 @@ fi
 
 if [[ $DISABLE_CRON == "false" ]]
  then
-	exec /usr/sbin/fcron -f
+	exec /usr/sbin/crond -f
  else
-	s6-svc -d /run/s6/services/fcron
+	s6-svc -d /run/s6/services/crond
 fi

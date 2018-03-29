@@ -13,7 +13,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.schema-version="1.0.0-rc1"
 
 RUN apk update
-RUN apk add rsyslog fcron busybox-extras bash bash-completion bind-tools ssmtp curl file wget tar ca-certificates shadow tzdata jq && \
+RUN apk add rsyslog busybox-extras bash bash-completion bind-tools ssmtp curl file wget tar ca-certificates shadow tzdata jq && \
 	cp /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime && \
         apk add nano && \
 	apk del tzdata && \
