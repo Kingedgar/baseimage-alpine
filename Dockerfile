@@ -1,6 +1,8 @@
 FROM alpine:3.7
 MAINTAINER ajoergensen
 
+COPY files/repositories /etc/apk/repositories
+
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US.UTF-8' TERM='xterm' 
 
 ARG BUILD_DATE
