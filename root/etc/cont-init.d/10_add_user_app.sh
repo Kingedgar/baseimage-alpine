@@ -19,6 +19,7 @@ User gid:    $(id -g app)
 -----------------------------------
 "
 
+chsh -s /bin/sh app
 
 chown app:app /app
 chown app:app /config
