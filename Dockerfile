@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.9
 MAINTAINER ajoergensen
 
 COPY files/repositories /etc/apk/repositories
@@ -10,11 +10,12 @@ ARG VCS_REF
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/ajoergensen/baseimage-alpine.git" \
       org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.schema-version="1.0.0-rc1"
+      org.label-schema.schema-version="my-3.9-test"
 
-RUN apk update
+RUN sed -i 's|@@VERSION@@|v3.9|g' /etc/apk/repositories && \
+RUN apk -U upgrade
 RUN apk add rsyslog busybox-extras bash bash-completion bind-tools ssmtp curl file wget tar ca-certificates shadow tzdata jq && \
-	cp /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime && \
+	cp /usr/share/zoneinfo/America/Chicago /etc/localtime && \
         apk add nano && \
         apk add screen && \
 	apk del tzdata && \
