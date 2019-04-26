@@ -12,9 +12,10 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.schema-version="my-3.9-test"
 
-RUN sed -i 's|@@VERSION@@|v3.9|g' /etc/apk/repositories && \
-RUN apk -U upgrade
-RUN apk add rsyslog busybox-extras bash bash-completion bind-tools ssmtp curl file wget tar ca-certificates shadow tzdata jq && \
+RUN \
+        sed -i 's|@@VERSION@@|v3.9|g' /etc/apk/repositories && \
+        apk -U upgrade \
+        apk add rsyslog busybox-extras bash bash-completion bind-tools ssmtp curl file wget tar ca-certificates shadow tzdata jq && \
 	cp /usr/share/zoneinfo/America/Chicago /etc/localtime && \
         apk add nano && \
         apk add screen && \
