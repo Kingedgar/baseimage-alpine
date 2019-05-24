@@ -14,7 +14,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 
 RUN \
         sed -i 's|@@VERSION@@|v3.9|g' /etc/apk/repositories && \
-        apk -U upgrade \
+        apk -U upgrade && \
         apk add rsyslog busybox-extras bash bash-completion bind-tools ssmtp curl file wget tar ca-certificates shadow tzdata jq
 
 ENV TZ='America/Chicago'
