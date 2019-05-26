@@ -1,7 +1,7 @@
 Alpine baseimage
 ================
 
-A baseimage based on Alpine 3.7 with [Skarnet's s6 process supervision](http://www.skarnet.org/software/s6/) installed from [Just Container's s6 Overlay](https://github.com/just-containers/s6-overlay).
+A baseimage based on Alpine 3.9 with [Skarnet's s6 process supervision](http://www.skarnet.org/software/s6/) installed from [Just Container's s6 Overlay](https://github.com/just-containers/s6-overlay).
 
 Bits and pieces have been sourced from other fine Docker images
 
